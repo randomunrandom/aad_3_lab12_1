@@ -13,9 +13,10 @@
 void tel_record::user_input() {
     char c;
     std::cout << "введите информацию об имене владельце: ";
+    std::cin.clear();
     getline(std::cin, owner);
     std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "введите номер телефона в формате \"+7**********\": ";
     std::cin >> number;
     if (number.size() == 10) number = "+7" + number;
@@ -30,12 +31,13 @@ void tel_record::user_input() {
     }
     std::cout << "введите время разговора в формате \"ЧЧ:ММ\": ";
     std::cin >> time_hour >> c >> time_min;
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    //std::cin.clear();
+    //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     while ((c != ':') or (time_hour <= 0) or (time_min <= 0) or (time_min >= 60)) {
+        std::cout << "введите время разговора в формате \"ЧЧ:ММ\": ";
         std::cin >> time_hour >> c >> time_min;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        //std::cin.clear();
+        //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }
 
