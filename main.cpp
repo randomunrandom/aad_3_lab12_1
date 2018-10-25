@@ -81,7 +81,7 @@ int main() {
                 }
                 break;
             default:
-                std::cout << "Ошибка, выбрана неверная опция";
+                std::cout << "ОШИБКА - выбрана неверная опция: " << r << std::endl;
                 break;
         }
     } while ((r > 0) and (r < 5));
