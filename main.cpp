@@ -14,5 +14,6 @@
 int main() {
     tel_record test;
     test.user_input();
+    test.print_information();
     return 0;
 }
