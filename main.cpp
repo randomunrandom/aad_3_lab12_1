@@ -17,12 +17,16 @@ int main() {
     int r;
     do {
         std::cout << "выберите одну из опций: " << std::endl;
+        std::cout << "\tзакончить работу: 0" << std::endl;
         std::cout << "\tдобавить контакт: 1" << std::endl;
         std::cout << "\tвывести все контакты: 2" << std::endl;
         std::cout << "\tпосчитать счёт для контакта(по имени): 3" << std::endl;
         std::cout << "\tпосчитать счёт для контакта(по номеру): 4" << std::endl;
         std::cin >> r;
         switch (r) {
+            case 0:
+                std::cout << "окончание работы" << std::endl;
+                break;
             case 1: {
                 std::cin.clear();
                 //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -84,7 +88,7 @@ int main() {
                 std::cout << "ОШИБКА - выбрана неверная опция: " << r << std::endl;
                 break;
         }
-    } while ((r > 0) and (r < 5));
+    } while (r != 0);
 
     return 0;
 }
