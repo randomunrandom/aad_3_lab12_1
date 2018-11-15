@@ -31,7 +31,7 @@ void tel_record::user_input() {
     }
     std::cout << "введите время разговора в формате \"ЧЧ:ММ\": ";
     std::cin >> time_hour >> c >> time_min;
-    while ((c != ':') or (time_hour < 0) or (time_min <= 0) or (time_min >= 60)) {
+    while ((c != ':') or (time_hour < 0) or (time_min < 0) or (time_min > 59)) {
         std::cout << "введите время разговора в формате \"ЧЧ:ММ\": ";
         std::cin >> time_hour >> c >> time_min;
     }
